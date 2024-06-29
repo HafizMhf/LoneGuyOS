@@ -719,8 +719,13 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 1. What is the output of step 5 above, explain the error? ***(1 mark)*** 
 ```bash
-the output for step 5 is Server Error (http://localhost:3000/random) , The "Server Error" response from our Node.js application when accessing http://localhost:3000/random via curl indicates that there's an issue with the Node.js application's ability to fetch and return data from the MySQL database.
+Cannot GET /
+The output for step 5 is Server Error (http://localhost:3000/random) , 
+The "Server Error" response from our Node.js application when accessing http://localhost:3000/random via curl indicates that there's an issue with the Node.js application's ability to fetch and return data from the MySQL database.
 ```
+
+<img src="./images/error.png" width="70%">
+
 
 2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
 ```bash
@@ -767,10 +772,19 @@ exit
 
 By following these steps, we can ensure that the mytable is properly set up and populated within our MySQL container. This setup is crucial for our Node.js application (nodejs-app) to correctly interact with the MySQL database when we make requests to fetch random rows.
 ```
-<img src="./images/mytable.png" width="70%">
-<img src="./images/showtable.png" width="70%">
+<img src="./images/mytable.png" width="50%">
+<img src="./images/showtable.png" width="50%">
 
-<img src="./images/error.png" width="70%">
+```bash
+This indicates that both have the connection with both get to ping
+```
+<img src="./images/nodemysqlping.png" width="50%">
+
+
+```bash
+This is the mysql credentials, with the ping stated from the bridgenet connection
+```
+<img src="./images/mysql.png" width="50%">
 
 
 ## What to submit
