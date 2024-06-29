@@ -489,6 +489,9 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
  <img src="./images/helloworldweb.png" width="70%">
 
 
+
+My static webpages:
+
  <img src="./images/web.png" width="70%">
 
 ***Questions:***
@@ -553,7 +556,7 @@ C1 - Bluenet  ("IPAddress": "172.18.0.2")
 <img src="./images/ipbluenet.png" width="70%">
 
 ```bash
-C1 - Rednet ("IPAddress": "172.19.0.2")
+C2 - Rednet ("IPAddress": "172.19.0.2")
 ```
 <img src="./images/iprednet.png" width="70%">
 
