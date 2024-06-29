@@ -6,6 +6,7 @@ Section: 3
 
 Team Mates:
 1. Muhammad Hafiz Faruqi bin Md Saifuddin and 2217241
+2. Muhammad Nor Syahmi Bin Khalid and 2217685
 
 
 ## Rules
@@ -350,6 +351,7 @@ The CPU speed of the virtual CPU is 2625.748 MHz (approximately 2.63 GHz).
 ```bash
 PID - 2782 , codespa+ use the most CPU cycles
 ```
+
 ## Running your own container instance.
 
 1. At the terminal, run a linux instance. By typing the following command. 
