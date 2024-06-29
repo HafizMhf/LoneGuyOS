@@ -321,8 +321,15 @@ power management:
 @HafizMhf ➜ /workspaces/LoneGuyOS (main) $ uname -a
 Linux codespaces-72cc6e 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
 ```
-11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
+11. What is the available free memory in the system. ***(1 mark)***
+```bash
+5.9 GiB
+```
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
+```bash
+20 G
+/dev/loop3       32G   10G   20G  34% /workspaces
+```
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)***
 ```bash
 Linux codespaces-72cc6e 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
@@ -336,6 +343,9 @@ Linux codespaces-72cc6e 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59
 2560 4K pages
 ```
 16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** 
+```bash
+The CPU speed of the virtual CPU is 2625.748 MHz (approximately 2.63 GHz).
+```
 17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
 ```bash
 PID - 2782 , codespa+ use the most CPU cycles
