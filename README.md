@@ -717,9 +717,58 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __Fill answer here__.
-2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)*** 
+```bash
+the output for step 5 is Server Error (http://localhost:3000/random) , The "Server Error" response from our Node.js application when accessing http://localhost:3000/random via curl indicates that there's an issue with the Node.js application's ability to fetch and return data from the MySQL database.
+```
 
+2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+```bash
+we need to insert the table in the database , 
+
+Access the MySQL Container:
+First, access the shell of your running MySQL container using the docker exec command. Assuming your MySQL container is named mysql-container, run:
+
+docker exec -it mysql-container bash
+This command opens a bash shell (bash) inside the mysql-container container (-it for interactive mode).
+
+Connect to MySQL:
+Once inside the MySQL container shell, connect to the MySQL server using the mysql client. Use the following command:
+
+
+mysql -u root -p
+Replace root with your MySQL user if different, and enter your MySQL root password when prompted.
+
+Execute SQL Commands:
+With the MySQL prompt (mysql>), execute the SQL commands to create the mytable and insert data:
+
+
+CREATE TABLE mytable (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  value VARCHAR(255) NOT NULL
+);
+
+INSERT INTO mytable (name, value) VALUES ('example1', 'value1'), ('example2', 'value2'), ('example3', 'value3');
+These commands create the mytable with columns id, name, and value, and insert three rows of sample data.
+
+Verify Operations:
+Verify that the table and data were created successfully by querying the table:
+
+SELECT * FROM mytable;
+This should display the rows you inserted.
+
+Exit MySQL and Container Shell:
+To exit the MySQL client, type:
+
+exit;
+To exit the MySQL container's shell, type:
+exit
+
+By following these steps, we can ensure that the mytable is properly set up and populated within our MySQL container. This setup is crucial for our Node.js application (nodejs-app) to correctly interact with the MySQL database when we make requests to fetch random rows.
+```
+<img src="./images/mytable.png" width="70%">
+<img src="./images/showtable.png" width="70%">
 
 
 ## What to submit
