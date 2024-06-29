@@ -770,6 +770,8 @@ By following these steps, we can ensure that the mytable is properly set up and 
 <img src="./images/mytable.png" width="70%">
 <img src="./images/showtable.png" width="70%">
 
+<img src="./images/error.png" width="70%">
+
 
 ## What to submit
 
