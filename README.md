@@ -56,9 +56,18 @@ Team Mates:
 
 ***Questions:***
 
-1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** Ubuntu Linux image
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** First option is 2 core, 8GB RAM and 32GB storage. Second option is 4 core 16GB RAM and 32GB storage.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** To save the work in the local repository, else the work will not be save into the repository.
+1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** 
+```bash
+Ubuntu Linux image
+```
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
+```bash
+First option is 2 core, 8GB RAM and 32GB storage. Second option is 4 core 16GB RAM and 32GB storage.
+```
+3. Why must we commit and sync our current work on source control? ***(1 mark)*** 
+```bash
+To save the work in the local repository, else the work will not be save into the repository.
+```
 
 ## Exploring the Terminal
 
@@ -306,16 +315,31 @@ power management:
 ```
 9. Run the command **top** and type **q** to quit. ***(1 mark)*** 
  <img src="./images/top.png" width="70%">
- 
-10. Run the command **uname -a**. ***(1 mark)*** __Fill answer here__.
-11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
-12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
-13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** __Fill answer here__.
-14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** __Fill answer here__.
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __Fill answer here__.
 
+10. Run the command **uname -a**. ***(1 mark)***
+```bash
+@HafizMhf ➜ /workspaces/LoneGuyOS (main) $ uname -a
+Linux codespaces-72cc6e 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+```
+11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
+12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
+13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)***
+```bash
+Linux codespaces-72cc6e 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59:24 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+```
+14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
+```bash
+ ls -asl provides a more comprehensive view, including hidden files, sizes, and detailed file information, whereas ls only lists the names of visible files and directorie
+ ```
+15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
+```bash
+2560 4K pages
+```
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** 
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
+```bash
+PID - 2782 , codespa+ use the most CPU cycles
+```
 ## Running your own container instance.
 
 1. At the terminal, run a linux instance. By typing the following command. 
