@@ -729,7 +729,7 @@ The "Server Error" response from our Node.js application when accessing http://l
 
 2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
 ```bash
-we need to insert the table in the database , 
+We need to insert the table in the database , 
 
 Access the MySQL Container:
 First, access the shell of your running MySQL container using the docker exec command. Assuming your MySQL container is named mysql-container, run:
@@ -761,18 +761,37 @@ Verify Operations:
 Verify that the table and data were created successfully by querying the table:
 
 SELECT * FROM mytable;
-This should display the rows you inserted.
+(This should display the rows you inserted.)
 
 Exit MySQL and Container Shell:
-To exit the MySQL client, type:
-
+(To exit the MySQL client, type:)
 exit;
+
 To exit the MySQL container's shell, type:
 exit
 
 By following these steps, we can ensure that the mytable is properly set up and populated within our MySQL container. This setup is crucial for our Node.js application (nodejs-app) to correctly interact with the MySQL database when we make requests to fetch random rows.
 ```
+
+```bash
+Next:
+docker network create bridgenet1
+docker network connect bridgenet1 mysql-container
+docker network connect bridgenet1 nodejs-container
+docker exec -it nodejs-container ping 172.20.0.2
+docker exec -it mysql-container ping 172.20.0.3
+curl http://localhost:3000/random
+
+```
+
+```bash
+This is the mysql mytable 
+```
 <img src="./images/mytable.png" width="50%">
+
+```bash
+This is the mysql mytable values
+```
 <img src="./images/showtable.png" width="50%">
 
 ```bash
