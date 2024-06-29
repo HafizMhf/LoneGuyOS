@@ -410,9 +410,14 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** __Fill answer here__.
+1. Are files in the container persistent. Why not?. ***(1 mark)*** 
+```bash 
+No, because containers are stateless by default. File changes within a container are lost when the container stops.
+```
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
-
+```bash 
+Yes, multiple instances can be run using different container names.
+```
 ## Running your own container with persistent storage
 
 1. In the previous experiment, you might have notice that containers are not persistent. To make storage persistent, you will need to mount them. 
@@ -430,14 +435,26 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)***
+```bash 
+User and group are root:root.
+```
+ <img src="./images/root.png" width="70%">
+
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
-//use sudo and chown
+steps : 
+
+1-Navigate to the Parent Directory:
+cd /workspaces/LoneGuyOS
+
+2-Change Ownership:
 sudo chown -R codespace:codespace myroot
 
+3-Verify the Change:
+ls -l myroot
 ```
-*** __Fill answer here__.***
+ <img src="./images/chownn.png" width="70%">
 
 ## You are on your own, create your own static webpage
 
