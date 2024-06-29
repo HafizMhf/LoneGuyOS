@@ -63,11 +63,13 @@ Ubuntu Linux image
 ```
 2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
 ```bash
-First option is 2 core, 8GB RAM and 32GB storage. Second option is 4 core 16GB RAM and 32GB storage.
+First option is 2 core, 8GB RAM and 32GB storage. 
+Second option is 4 core 16GB RAM and 32GB storage.
 ```
 3. Why must we commit and sync our current work on source control? ***(1 mark)*** 
 ```bash
-To save the work in the local repository, else the work will not be save into the repository.
+To save the work in the local repository, 
+To ensure that the changes are reflected in GitHub repository associated with the Codespace
 ```
 
 ## Exploring the Terminal
@@ -324,12 +326,14 @@ Linux codespaces-72cc6e 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59
 ```
 11. What is the available free memory in the system. ***(1 mark)***
 ```bash
-5.9 GiB
+279 MiB
 ```
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
 ```bash
-20 G
-/dev/loop3       32G   10G   20G  34% /workspaces
+18 GB available disk space
+
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop3       32G   13G   18G  41% /workspaces
 ```
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)***
 ```bash
@@ -337,7 +341,8 @@ Linux codespaces-72cc6e 6.5.0-1022-azure #23~22.04.1-Ubuntu SMP Thu May  9 17:59
 ```
 14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
 ```bash
- ls -asl provides a more comprehensive view, including hidden files, sizes, and detailed file information, whereas ls only lists the names of visible files and directorie
+ - ls -asl provides a more comprehensive view, including hidden files, sizes, and detailed file information, 
+ - ls only lists the names of visible files and directorie
  ```
 15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
 ```bash
@@ -349,8 +354,9 @@ The CPU speed of the virtual CPU is 2625.748 MHz (approximately 2.63 GHz).
 ```
 17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
 ```bash
-PID - 2782 , codespa+ use the most CPU cycles
+codespace use the most CPU cycles
 ```
+<img src="./images/htop.png" width="70%">
 
 ## Running your own container instance.
 
@@ -412,7 +418,8 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 1. Are files in the container persistent. Why not?. ***(1 mark)*** 
 ```bash 
-No, because containers are stateless by default. File changes within a container are lost when the container stops.
+No, because containers are stateless by default. 
+File changes within a container are lost when the container stops.
 ```
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
 ```bash 
@@ -443,7 +450,10 @@ User and group are root:root.
 
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
-steps : 
+
+Yes, you can change
+
+Follow this steps : 
 
 1-Navigate to the Parent Directory:
 cd /workspaces/LoneGuyOS
@@ -491,11 +501,11 @@ User and Group: root:root
 
 2. What port is the apache web server running. ***(1 mark)*** 
 ```bash 
-Port 80 inside the container.
+Port 80
 ```
 3. What port is open for http protocol on the host machine? ***(1 mark)***
 ```bash 
-Port 8080, as mapped in the Docker run command.
+Port 8080
 ```
 ## Create SUB Networks
 
@@ -517,6 +527,7 @@ docker run -itd --net rednet --name c2 busybox sh
 1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** 
 ```bash 
 BusyBox: BusyBox combines tiny versions of many common UNIX utilities into a single small executable, providing minimalist replacements for most of the utilities you usually find in GNU coreutils, util-linux, etc.
+
 --name: The --name switch assigns a custom name to the container for easy reference.
 ```
 2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** 
@@ -566,7 +577,7 @@ docker exec c1 ping c2
 
 1. Are you able to ping? Show your output . ***(1 mark)*** 
 ```bash
-Yes 
+Yes, we can ping
 ```
 <img src="./images/pingok.png" width="70%">
 
@@ -729,22 +740,22 @@ The "Server Error" response from our Node.js application when accessing http://l
 
 2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
 ```bash
+Follow the steps:
+
 We need to insert the table in the database , 
 
-Access the MySQL Container:
-First, access the shell of your running MySQL container using the docker exec command. Assuming your MySQL container is named mysql-container, run:
+1. Access the MySQL Container:
+ Access the shell of your running MySQL container using the docker exec command. Assuming your MySQL container is named mysql-container, run:
 
 docker exec -it mysql-container bash
-This command opens a bash shell (bash) inside the mysql-container container (-it for interactive mode).
 
-Connect to MySQL:
+2. Connect to MySQL:
 Once inside the MySQL container shell, connect to the MySQL server using the mysql client. Use the following command:
-
 
 mysql -u root -p
 Replace root with your MySQL user if different, and enter your MySQL root password when prompted.
 
-Execute SQL Commands:
+3. Execute SQL Commands:
 With the MySQL prompt (mysql>), execute the SQL commands to create the mytable and insert data:
 
 
@@ -757,13 +768,13 @@ CREATE TABLE mytable (
 INSERT INTO mytable (name, value) VALUES ('example1', 'value1'), ('example2', 'value2'), ('example3', 'value3');
 These commands create the mytable with columns id, name, and value, and insert three rows of sample data.
 
-Verify Operations:
-Verify that the table and data were created successfully by querying the table:
+4. Verify Operations:
+  Verify that the table and data were created successfully by querying the table:
 
 SELECT * FROM mytable;
 (This should display the rows you inserted.)
 
-Exit MySQL and Container Shell:
+5. Exit MySQL and Container Shell:
 (To exit the MySQL client, type:)
 exit;
 
@@ -774,7 +785,8 @@ By following these steps, we can ensure that the mytable is properly set up and 
 ```
 
 ```bash
-Next:
+Create bridgenet for the network:
+
 docker network create bridgenet1
 docker network connect bridgenet1 mysql-container
 docker network connect bridgenet1 nodejs-container
