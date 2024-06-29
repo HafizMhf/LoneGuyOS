@@ -479,7 +479,7 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
  <img src="./images/helloworldweb.png" width="70%">
 
 
- <img src="./images/webpage.png" width="70%">
+ <img src="./images/web.png" width="70%">
 
 ***Questions:***
 
