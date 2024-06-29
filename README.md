@@ -549,7 +549,7 @@ C1 - Rednet ("IPAddress": "172.19.0.2")
 
 5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** 
 ```bash
-Cannot ping
+Cannot ping, bad address C2
 ```
 <img src="./images/ping.png" width="70%">
 
@@ -564,8 +564,17 @@ docker exec c1 ping c2
 ```
 ***Questions:***
 
-1. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
-2. What is different from the previous ping in the section above? ***(1 mark)*** __Fill answer here__.
+1. Are you able to ping? Show your output . ***(1 mark)*** 
+```bash
+Yes 
+```
+<img src="./images/pingok.png" width="70%">
+
+2. What is different from the previous ping in the section above? ***(1 mark)*** 
+```bash
+Previous Ping: The ping command failed because c1 and c2 were on separate networks.
+Current Ping: The ping command succeeded because c1 and c2 are now connected through the bridgenet network, allowing communication between them.
+```
 
 ## Intermediate Level (10 marks bonus)
 
